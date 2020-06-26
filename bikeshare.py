@@ -19,15 +19,33 @@ def get_filters():
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     city = input("Enter a city (chicago, new york city, washington): ")
     city = city.lower()
-    while city != 'chicago' and city != 'new york city' and city != 'washington':
-        city = input("Enter a valid city (chicago, new york city, washington): ")
+#    while city != 'chicago' and city != 'new york city' and city != 'washington':
+#        city = input("Enter a valid city (chicago, new york city, washington): ")
+#        city = city.lower()
+    while True:
+        city = input ('please enter the name of the city you would like to analize\n\n')
         city = city.lower()
+        if city not in ['chicago','new york city','washington']:
+            print ('incorrect entry, name not found')
+            continue
+        else:
+            break
+
+
     # TO DO: get user input for month (all, january, february, ... , june)
     month = input("Enter a month (all, january, february, ... , june): ")
     month = month.lower()
+    while True:
+        month = input('please enter the month you want to view by typiny: january, february, march, april, may, june \n or type all if you want no filter\n\n' )
+        month = month.lower()
+        if month not in ['all', 'january', 'february', 'march', 'april', 'may', 'june']:
+            print('wrong input, kindly check and re-enter a valid month')
+            continue
+        else:
+            break
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
-    day = input("Enter a day name (all, monday, ... , sunday): ")
+    day = input("Enter a day name (all, mon, tue, wed, thu, fri, sat , sun): ")
     day = day.lower()
 
     print('-'*40)
@@ -115,7 +133,7 @@ def station_stats(df):
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
 
-    print('\nCalculating Trip Duration...\n')
+    print('\nCalculating Trip Duration:\n')
     start_time = time.time()
 
     # TO DO: display total travel time
@@ -188,3 +206,8 @@ def main():
 
 if __name__ == "__main__":
 	main()
+<<<<<<< HEAD
+=======
+
+  
+>>>>>>> origin/refactoring
