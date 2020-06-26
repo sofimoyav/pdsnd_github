@@ -15,3 +15,5 @@ s is a project to analyze bikeshare data from three US cities.
 
 ### Credits
 sofimoyav
+
+# Cambio 3.b se eliminan lineas en blanco de archivo bikeshare.py

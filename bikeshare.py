@@ -1,7 +1,7 @@
 import time
 import pandas as pd
 import numpy as np
-
+#Se eliminan lineas en blanco por requerimiento e actividad 3.b
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
@@ -33,7 +33,6 @@ def get_filters():
     print('-'*40)
      
     return city, month, day
-    
 
 def load_data(city, month, day):
     """
@@ -73,7 +72,6 @@ def load_data(city, month, day):
 
     return df
 
-
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
 
@@ -93,11 +91,8 @@ def time_stats(df):
     popular_hour = df['hour'].mode()[0]
     print('Most Popular Start Hour:', popular_hour)
     
-    
-
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-
 
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
@@ -116,7 +111,6 @@ def station_stats(df):
     print('most frequent combination of start station and end station trip: ' + popular_startandend_station )
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-
 
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
@@ -139,7 +133,6 @@ def trip_duration_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
 def user_stats(df):
     """Displays statistics on bikeshare users."""
 
@@ -149,7 +142,6 @@ def user_stats(df):
     # TO DO: Display counts of user types
     count_user_type=df['User Type'].value_counts()
     print ('Counts of user type: ',count_user_type)
-    
 
     # TO DO: Display counts of gender
     if 'Gender' in df.columns:
@@ -169,10 +161,8 @@ def user_stats(df):
     else:
         print ("The city doesn't have Birth Year information")
     
-    
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-
 
 def main():
     while True:
@@ -196,8 +186,5 @@ def main():
         if restart.lower() != 'yes':
             break
 
-
 if __name__ == "__main__":
 	main()
-
-  
